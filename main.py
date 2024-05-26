@@ -7,7 +7,7 @@ from PIL import Image, ImageTk
 from tkinter import messagebox
 import mysql.connector
 
-# lớp cha
+# Class click mouse !!!!!!!!!!
 class Event:
     def __init__(self):
         self.mouse_down = False
@@ -64,7 +64,7 @@ sukien = complete()
 sukien = Another()
 
 h, w, c = 0, 0, 0
-
+ 
 cv2.namedWindow("Real", cv2.WINDOW_NORMAL)
 
 ######################################################################################################################
@@ -78,7 +78,7 @@ root.configure(bg='lightblue')
 # Kết nối database
 connection = mysql.connector.connect(host='localhost', user='root', password='', port='3306', database='test')
                                      
-c = connection.cursor()
+# c = connection.cursor()
 def set_count():
     try:
         sukien.target_count = int(entry_enter.get())
@@ -90,7 +90,7 @@ def set_count():
         insert_query = "INSERT INTO `muctieu_datra`(`MSNC`, `REP`,`COUNT`) VALUES (%s,%s,%s)"
         vals = (MSNC,REP,COUNT)
         c.execute(insert_query,vals)
-        connection.commit()
+        # connection.commit()
         
         messagebox.showinfo("Update", "Information has been updated")
     except:
